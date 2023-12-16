@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Bài 4.1
+
+        // Nhập điểm từ người dùng cho các môn học
+        let diemToan = parseFloat(prompt("Nhập điểm môn Toán :"));
+        let diemVatLy = parseFloat(prompt("Nhập điểm môn Vật Lý:"));
+        let diemHoaHoc = parseFloat(prompt("Nhập điểm môn Hóa Học:"));
+
+        // Tính tổng điểm và điểm trung bình
+        let tongDiem = diemToan + diemVatLy + diemHoaHoc;
+        let diemTrungBinh = tongDiem / 3;
+
+        console.log("Tổng điểm của sinh viên là: " + tongDiem);
+        console.log("Điểm trung bình của sinh viên là: " + diemTrungBinh);
+
+        // Bài 4.2
+
+        // Nhập độ Celsius từ người dùng
+        let doCelsius = parseFloat(prompt("Nhập độ Celsius:"));
+
+        // Chuyển đổi sang độ Fahrenheit
+        let doFahrenheit = (doCelsius * 9 / 5) + 32;
+
+        console.log("Độ Fahrenheit tương ứng là: " + doFahrenheit);
+
+    </script>
+    </body>
+</html>
