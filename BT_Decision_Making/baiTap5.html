@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let soNhapVao = parseInt(prompt("Nhập một số:"));
+
+        let ketQua = soNhapVao % 2;
+        switch (ketQua) {
+            case 0:
+                document.write("Số bạn nhập là số chẵn.");
+                break;
+            case 1:
+                document.write("Số bạn nhập là số lẻ.");
+                break;
+            default:
+                document.write("Đây không phải là số nguyên.");
+        }
+    </script>
+</body>
+</html>
