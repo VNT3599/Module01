@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhapChuoi = prompt("Nhập vào một chuỗi: ");
+        let result = '';
+
+        for (let i = 0; i < nhapChuoi.length; i++) {
+            let current = nhapChuoi[i];
+
+            if (current === current.toUpperCase()) {
+                //
+                result += current.toLowerCase();
+            } else {
+                //
+                result += current.toUpperCase();
+            }
+        }
+
+        document.write("Chuỗi sau khi chuyển đổi: " + result);
+
+    </script>
+</body>
+</html>
