@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timCapSoTongBang10(arr) {
+            let ketQua = [];
+
+            // Duyệt qua mỗi phần tử trong mảng
+            for (let i = 0; i < arr.length; i++) {
+                // Duyệt qua các phần tử còn lại trong mảng
+                for (let j = i + 1; j < arr.length; j++) {
+                    // 
+                    if (arr[i] + arr[j] === 10) {
+                        // Thêm cặp số vào kết quả
+                        ketQua.push([arr[i], arr[j]]);
+                    }
+                }
+            }
+
+            return ketQua;
+        }
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // 
+        let ketQua = timCapSoTongBang10(arr);
+        document.write("Các cặp số có tổng bằng 10 là : <br>" )
+        for (let i = 0; i < ketQua.length; i++){
+            document.write(ketQua[i][0] + " và " + ketQua[i][1] + "<br>" );
+        }
+
+    </script>
+</body>
+</html>

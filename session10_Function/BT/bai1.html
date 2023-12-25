@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 
+        function timSoBeNhat(a, b, c) {
+            if (a <= b && a <= c) {
+                return a;
+            } else if (b <= a && b <= c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+
+        // 
+        let soThuNhat = parseFloat(prompt("Nhập số thứ nhất:"));
+        let soThuHai = parseFloat(prompt("Nhập số thứ hai:"));
+        let soThuBa = parseFloat(prompt("Nhập số thứ ba:"));
+
+        // 
+        let ketQua = timSoBeNhat(soThuNhat, soThuHai, soThuBa);
+        console.log("Số bé nhất là: " + ketQua);
+
+    </script>
+</body>
+</html>

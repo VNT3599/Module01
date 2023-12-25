@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Giai thừa của một số là tích của tất cả các số nguyên dương nhỏ hơn hoặc bằng số đó.
+         n!=n×(n−1)×(n−2)×…×2×1
+          vd: 5!=5×4×3×2×1=120
+        */
+
+        // 
+        function tinhGiaiThua(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * tinhGiaiThua(n - 1);//  đệ quy ???
+            }
+        }
+
+        // 
+        let soNhapVao = parseInt(prompt("Nhập số nguyên để tính giai thừa:"));
+
+        // 
+        let ketQua = tinhGiaiThua(soNhapVao);
+        console.log("Giai thừa của " + soNhapVao + " là: " + ketQua);
+
+    </script>
+</body>
+</html>
