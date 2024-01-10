@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    margin: 5px 0;
+}
+
+.key {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.key:hover {
+    background-color: #ddd;
+}
+
+.row:nth-child(1) {
+    order: 1; 
+
+}
+
+.row:nth-child(2) {
+    order: 2; 
+    justify-content: center;
+}
+
+.row:nth-child(3) {
+    order: 3;
+    justify-content: center;
+}
+.row:nth-child(4) {
+    order: 4;
+    display:inline-block;
+    width: 100%;
+}

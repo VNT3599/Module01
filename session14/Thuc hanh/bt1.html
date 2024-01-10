@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 id="text">This is a text</h1>
+    <button onclick="hideText()">Hide text</button>
+    <button onclick="showText()">Show text</button>
+
+    <script>
+        function hideText() {
+            let hide = document.getElementById("text");
+            hide.style.display ="none";
+            // style.opacity = 0 ; ==> làm mờ text đi
+        }
+
+        function showText() {
+            let show = document.getElementById("text")
+            show.style.display ="block";
+            // style.opacity = 1 ; ==> hiển thị text
+        }
+    </script>
+</body>
+</html>

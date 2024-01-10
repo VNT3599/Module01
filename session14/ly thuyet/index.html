@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">xin chào học viên fukuoka</h1>
+    <button onclick="changeDom()">change</button>
+    <p class="head">thẻ p1</p>
+    <p class="head">thẻ p2</p>
+    <p>thẻ p3</p>
+    <div class="head">thẻ div</div>
+    <!-- 
+        DOM-
+        mô tả tài liệu dạng đối tượng
+        - khi chương trình được tải (load) thì trình duyệt sẽ tạo ra mô hình cây DOM
+        - từ mô hình DOM chúng ta có thể
+        + thêm, sửa , xóa các phần tử HTML
+        - các thành phần của DOM
+        gồm 3 thành phần
+        1. Element ( các thẻ div, p, session,...)
+        2. attribute ( các thuộc tính id, class, href, src)
+        3. text
+
+        các cách để lấy element
+        c1. lấy theo ID (id là duy nhất sẽ trả về 1 element)
+         document.getElementById("tên id")
+        c2. lấy theo class
+         document.getElementsByClassName("tên class")
+        ==> trả về 1 HTML collection dạng mảng : có thể dùng for duyệt các phần tử 
+        trong mảng, lấy các phần tử theo index
+        c3. lấy theo tên thẻ
+         document.getElementsByTagName("tên tag")
+        ==> trả về 1 HTML collection dạng mảng 
+        c4. lấy theo SELECTOR
+        document.querySelector("tên bộ chọn selector")
+        ==> trả về 1 đối tượng
+        c5. lấy theo SelectorAll
+        document.querySelectorAll("tên bộ chọn selector")
+        ==> trả về 1 đối tượng
+     -->
+
+     <script>
+        function changeDom(){
+            let getElementById1 = document.getElementById("title");
+            getElementById1.className="heading"
+            let getElementsByClassName1 = document.getElementsByClassName("head");
+            console.log("1111",getElementsByClassName1)
+            getElementsByClassName1[1].style.color = "red";
+            let getElementsByTagName2 = document.getElementsByTagName("p");
+            getElementsByTagName2[0].style.fontSize = "50px";
+
+        }
+
+     </script>
+</body>
+</html>

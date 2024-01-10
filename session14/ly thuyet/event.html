@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Event : những sự kiện tương tác
+         vd : click chuột, bàn phím , hover,...
+        C1. đặt tên sự kiện trực tiếp vào các thẻ elememt,vd : onclick, onmousemove,...
+        C2. lấy emelemt ra rồi addEvent cho nó
+
+     -->
+     <h1 onclick="eventDom()">click</h1>
+     <h2>click</h2>
+     <input type="text">
+     <button onclick="addEvent()">add</button>
+     <script>
+        function eventDom() {
+            console.log("sự kiện click");
+        }
+        // C2
+        let elm = document.getElementsByTagName("h2");
+        elm[0].addEventListener("click",()=>{
+            console.log("start event click");
+        })
+
+        function addEvent() {
+            let input = document.getElementsByTagName("input");
+            let inputValue =input[0].value
+            // trong input co thuộc tính value nên mới .value được
+            // trong img,.. không có value nên không .value được ==> mà .src
+            console.log("Giá trị nhập từ ô text: " + inputValue);
+
+            document.addEventListener("keypress",(event)=>{
+                //console.log("111",event.keyCode);
+                if (event.keyCode === 13) {
+                    console.log("so nhap vao la :")
+                }
+            })
+        }
+
+     </script>
+</body>
+</html>

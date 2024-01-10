@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #title {
+            color:red;
+        }
+        .title2{
+            color: blueviolet;
+        }
+        .heading{
+            background-color: bisque;
+        }
+        .attribute{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title1">attribute</h1>
+    <h1 class="title2">remove</h1>
+    <p class="toggle">toggle</p>
+    <p>setAttribute</p>
+    <img width="100px" height="100px" id="img" src="https://cdn-icons-png.flaticon.com/512/891/891948.png">
+    <!--     
+        classList : là 1 thuộc tính của element.
+        => nó sẽ lấy ra hết danh sách class của element.
+        -- trong classList sẽ cung cấp các phương thức sau
+        1. add(): thêm tên class vào
+        2. remove(): xóa teen class
+        3. toggle(): giống như 1 công tắc, có thì xóa đi, không có thì thêm vào
+        4. contain(): kiểm trả xêm element có class đấy không, trả về true/false
+
+        setAttribute : thêm thuôc tính
+
+    -->
+     <button onclick="changeAttribute()">click</button>
+     <script>
+        function changeAttribute() {
+            let element = document.getElementsByTagName("h1");
+            element[0].id = "title";
+            console.log("111", element);
+            let image = document.getElementById("img");
+            image.src ="https://cdn-icons-png.flaticon.com/512/497/497288.png";
+            let classList1 = element[0].classList.add("heading");
+            element[1].classList.remove("title2");
+
+            let elm = document.getElementsByTagName("p")
+            elm[0].classList.toggle("toggle");
+
+            let elmAttribute= document.getElementsByTagName("p");
+            elmAttribute[1].setAttribute("class","attribute");
+            
+        }
+     </script>
+</body>
+</html>
