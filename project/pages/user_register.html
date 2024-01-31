@@ -1,0 +1,40 @@
+<!-- Trong file user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="../css/user_reg-log.css"> <!-- Đảm bảo link đến file CSS -->
+</head>
+<body>
+    <header class="header">
+        <!-- Header của trang user -->
+    </header>
+
+    <div class="user-content">
+        <h2>Đăng ký </h2>
+
+        <!-- Form Đăng ký -->
+        <form id="registerForm">
+            <label for="username">Tên người dùng:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button ><a href="/pages/user_index.html" class="back-link">Trang Chủ</a></button>
+            <button type="submit">Đăng Ký</button>
+            
+        </form>
+
+        <!-- Nút Đăng xuất -->
+        <button id="logoutBtn" style="display: none;">Đăng Xuất</button>
+    </div>
+
+    <script src="js/user.js"></script> <!-- Đảm bảo link đến file JavaScript -->
+</body>
+</html>

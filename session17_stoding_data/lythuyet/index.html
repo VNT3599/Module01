@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>storing data in the browser</h1>
+    <!-- 
+        storing data in the browser
+        (lưu trữ dư liệu ở trình duyệt)
+        cung cấp 3 nơi lưu trữ
+        1. localStorage
+         -dữ liệu khi lưu lại sẽ không bị mất đi dữ liệu ( lưu trong bộ nhớ của máy tính chứ không phải trình duyệt)
+         -dung lượng tầm 5MB~10MB
+         - vd: 1 ảnh trên máy tính có dung lượng = 100kb
+         1MB = 1024kb
+         -> nếu lưu trên local thì sẽ lưu đk 50~100 ảnh
+
+        2. sessionStorage
+         -phiên làm việc
+          ( dữ liệu khi lưu trữ trong quá trình làm việc, khi tắt trình duyệt dữ liệu sẽ bị mất đi)
+         -dung lượng tầm 3MB~5MB
+         -(50~100 ảnh)
+
+        3. cookies
+         lưu trạng thai đăng nhập
+         ( sang module 3 học kỹ hơn)
+        cơ chế nó lưu như thế nào, dung lượng, cách lưu trữ
+
+        *******************
+        cách lưu trữ dư liệu
+        1. local storage
+        -lưu:
+         localStorage.setItem("tên_key muốn lưu", giá trị);
+         * lưu ý khi lưu dữ liệu dạng array hoặc object thì
+           trước khi lưu phải chuyện sang định dạng JSON
+        -lấy về
+         localStorage.getItem("tên_key");
+        -xóa
+         + xóa 1 key
+         localStorage.removeItem("tên_key")
+         + xóa 1 key
+         localStorage.clear();
+
+        2. session storage
+        -lưu:
+        sessionStorage.setItem("tên_key muốn lưu", giá trị);
+     -->
+
+     <script>
+        //lưu
+        // let fullName = "VNT";
+        // let age = 25;
+        // localStorage.setItem("name",fullName);
+        // localStorage.setItem("age", age);
+        // localStorage.setItem("address","QN");
+
+        sessionStorage.setItem("school","TVD");ư
+
+        // lấy về
+        let getItem = localStorage.getItem("age");
+        console.log("1111", getItem);
+
+        //xóa 
+        localStorage.removeItem("age");
+        localStorage.clear();
+
+        let student={
+            name: "hoa"
+        }
+        /* JSON.stringify(student) : chuyển sang định dạng JSON để lưu
+           vì localstorage chỉ cho phép lưu object, array dưới dạng JSON
+           JSON là định dạng dữ liệu chứ không phải kiểu dữ liệu
+           định dạng là kiểu giông như .jpg, .img,......
+         */ 
+        localStorage.setItem("student", JSON.stringify(student));
+        /*
+          khi lấy về vẫm ở định dạng JSON
+          nên phải parse ra để dùng
+        */
+        let result = JSON.parse(localStorage.getItem("student"));
+        console.log("22222", result);
+
+        //thêm
+        localStorage.setItem("student", JSON.stringify({...student,age: 20}));
+        // dáu ... là toán tử spread ( clone)
+     </script>
+</body>
+</html>

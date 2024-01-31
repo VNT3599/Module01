@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Users</title>
+    <link rel="stylesheet" href="../css/admin_user.css"> <!-- Đảm bảo link đến file CSS -->
+</head>
+<body>
+    <header class="header">
+        <!-- Header của trang admin -->
+    </header>
+
+    <div class="admin-content">
+        <h2>Quản lý Users</h2>
+
+        <!-- Nút thêm mới user -->
+        <button id="addUserBtn">Thêm Mới User</button>
+
+        <!-- Bảng hiển thị danh sách users -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Người Dùng</th>
+                    <th>Email</th>
+                    <!-- Các cột khác nếu cần -->
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody id="userList">
+                <!-- Dữ liệu người dùng sẽ được hiển thị ở đây -->
+            </tbody>
+        </table>
+
+        <!-- Phân trang -->
+        <div id="pagination"></div>
+
+        <!-- Thanh tìm kiếm -->
+        <input type="text" id="searchInput" placeholder="Tìm kiếm người dùng...">
+
+    </div>
+
+    <!-- js chức năng quản lý user -->
+    <script src="js/admin_users.js"></script> 
+</body>
+</html>

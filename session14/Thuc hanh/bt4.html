@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+body{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+        .container{
+            margin-top: 10%;
+            width: 100%;
+            max-width: 740px;
+            height: 540px;
+            background-color: black;
+            display: flex;
+            align-items: end;
+            position: relative;
+        }
+        li img{
+            width: 120px;
+            height: 100px;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            margin: 10px;
+            list-style: none;
+        }
+        .item{
+            margin-bottom: 20px;
+            margin-left: 20px;
+            /* overflow: hidden; */
+            width: 700px;
+        }
+        #img img{
+            position: absolute;
+            top: 5%;
+            left: 29px;
+            width: 92%;
+            height: 65%;
+        }
+        #btback{
+            position: absolute;
+            bottom: 70px;
+            left: 10px;
+
+        }
+        #btnext{
+            position: absolute;
+            right: 10px; 
+            bottom: 70px;
+        }
+        .listNew{
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="img"><img id="imgMain" src="../image/1.jpg" alt=""></div>
+        <div class="item">
+            <ul id="ul">
+                <!-- <li><img src="../image/173985_minion_curious_icon.png" alt=""></li>
+                <li><img src="../image/173990_minion_evil_icon.png" alt=""></li>
+                <li><img src="../image/173991_minion_dancing_icon.png" alt=""></li>
+                <li><img src="../image/174000_minion_evil_icon.png" alt=""></li>
+                <li><img src="../image/174006_minion_icon.png" alt=""></li> 
+                <li><img src="../image/174006_minion_icon.png" alt=""></li>
+                <li><img src="../image/2624859_bob_bob minion_despicable me_minion_icon.png" alt=""></li> -->
+            </ul>
+            <div onclick="backImg()" id="btback" style="color: antiquewhite;">❮</div>
+            <div onclick="nextImg()" id="btnext" style="color: antiquewhite;" >❯</div>
+        </div>
+    </div>
+    <script>
+        let listImg = ['../image/1.jpg', '../image/2.jpg', '../image/3.jpg', '../image/4.jpg', '../image/5.jpg', '../image/6.jpg', '../image/7.jpg'];
+
+        function renderImages() {
+            let element = '';
+            for (let i = 0; i < listImg.length; i++) {
+                element += `<li><img class="cssImg" onclick='chooseImg(${i})' src="${listImg[i]}" alt=""></li>`;
+            }
+            document.getElementById('ul').innerHTML = element;
+        }
+
+        function chooseImg(adrImg) {
+            document.getElementById('imgMain').src = listImg[adrImg];
+            let arrImg = document.getElementsByClassName('cssImg');
+            for (let i = 0; i < arrImg.length; i++) {
+                if (i == adrImg) {
+                    arrImg[i].classList.remove('listNew');
+                } else {
+                    arrImg[i].classList.add('listNew');
+                }
+            }
+        }
+        renderImages();
+    </script>
+    </body>
+    </html>

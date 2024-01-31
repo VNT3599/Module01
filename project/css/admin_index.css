@@ -1,0 +1,101 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* căn chỉnh header*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.header .logo {
+    /* Đặt logo sang lề bên trái */
+    margin-right: auto;
+}
+
+.header .user-info {
+    /* Đặt thông tin người dùng sang lề bên phải */
+    margin-left: auto;
+}
+
+
+.sidebar {
+    background-color: #555;
+    color: #fff;
+    width: 200px;
+    padding: 10px;
+    float: left;
+    height: 100vh; /* 100% chiều cao màn hình */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #4CAF50;
+}
+
+.main-content {
+    padding: 20px;
+    margin-left: 220px; /* Sidebar width + margin */
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Thêm kiểu cho form đăng nhập */
+.main-content form {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.main-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.main-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.main-content button:hover {
+    background-color: #45a049;
+}

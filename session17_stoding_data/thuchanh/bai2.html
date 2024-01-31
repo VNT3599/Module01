@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+        
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+        
+            <button type="button" onclick="login()">Login</button>
+        </form>
+        
+        <form id="registerForm">
+            <h2>Register</h2>
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" required>
+        
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" required>
+        
+            <button type="button" onclick="register()">Register</button>
+        </form>
+        
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('loginUsername').value;
+            var password = document.getElementById('loginPassword').value;
+
+            // Lấy danh sách người dùng từ localStorage
+            var users = JSON.parse(localStorage.getItem("users")) || {};
+
+            // Kiểm tra xem username có tồn tại trong danh sách người dùng hay không
+            if (users[username] && users[username].password === password) {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+
+        function register() {
+            var username = document.getElementById('registerUsername').value;
+            var password = document.getElementById('registerPassword').value;
+
+            // Lấy danh sách người dùng từ localStorage
+            var users = JSON.parse(localStorage.getItem("users")) || {};
+
+            // Kiểm tra xem username đã tồn tại trong danh sách người dùng hay chưa
+            if (users[username]) {
+                alert('User already exists');
+            } else {
+                // Thêm thông tin người dùng mới vào danh sách người dùng
+                users[username] = { password: password };
+
+                // Lưu danh sách người dùng mới vào localStorage
+                localStorage.setItem("users", JSON.stringify(users));
+
+                alert('Registration successful!');
+            }
+        }
+
+    </script>
+</body>
+</html>
